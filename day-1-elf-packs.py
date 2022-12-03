@@ -8,34 +8,44 @@ pyDatalog.create_terms("X,Y,Z, Elf, Layer, package, running_total")
 
 @pyDatalog.program()
 def _():
-    +package(1, 1, 1000)
-    +package(1, 2, 2000)
-    +package(1, 3, 3000)
 
-    +package(2, 1, 4000)
+    # pydatalog doesn't like having a layer numbered 0 for some reason
+    +package(elf1, 1, 0)
+    +package(elf1, 2, 1000)
+    +package(elf1, 3, 2000)
+    +package(elf1, 4, 3000)
 
-    +package(3, 1, 5000)
-    +package(3, 2, 6000)
+    +package(elf2, 1, 0)
+    +package(elf2, 2, 4000)
 
-    +package(4, 1, 7000)
-    +package(4, 2, 8000)
-    +package(4, 3, 9000)
+    +package(elf3, 1, 0)
+    +package(elf3, 2, 5000)
+    +package(elf3, 3, 6000)
 
-    +package(5, 1, 10000)
+    +package(elf4, 1, 0)
+    +package(elf4, 2, 7000)
+    +package(elf4, 3, 8000)
+    +package(elf4, 4, 9000)
 
-    # +package(Elf, 0, 0)
-    package(Elf, 1, 0)
+    +package(elf5, 1, 0)
+    +package(elf5, 2, 10000)
+    # if there is a package for level 1 then there is an empty package at level 0
+    # package(Elf, 0, 0) <= package(Elf, 1, _)
+    print(package(Elf, Layer, Total))
+
+    # FIXME: why can't I make this recursive?
     running_total(Elf, Layer, Total) <= package(Elf, Layer, Cost1) & (
         LayerBelow == Layer - 1
     ) & package(Elf, LayerBelow, Cost2) & (Total == Cost1 + Cost2)
     # running_total[Elf, Y] <= (package(Elf, Y, C) + running_total[Elf, Y - 1])
-    running_total(Elf, 0, 0)
+    print(running_total(Elf, Layer, Total))
+    # running_total(Elf, 0, 0)
 
     # (longest_path[Elf, Layer] == max_(Path, order_by=Total)) <= (
     #     running_total(Elf, Layer, Path, Total)
     # )
     # print(longest_path[Elf, Layer])
-    print(running_total(Elf, Layer, Total))
+    # print(running_total(Elf, Layer, Total))
 
 
 #     (path_with_cost(X, Y, P, T)) <= (path_with_cost(X, Z, P2, T2)) & link(Z, Y, C) & (

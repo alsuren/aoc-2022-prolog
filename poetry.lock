@@ -1,0 +1,51 @@
+[[package]]
+name = "pyDatalog"
+version = "0.17.4"
+description = "A pure-python implementation of Datalog, a truly declarative language derived from Prolog."
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.10"
+content-hash = "8251da133e415c74111472a88e3ff9dd15b2d28047fdd620aafb5ad6c6e9ef25"
+
+[metadata.files]
+pyDatalog = [
+    {file = "pyDatalog-0.17.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1e18c34712a9d3bd660a33c294e3c4da987e08cc8f6cfea8f1905735723d589c"},
+    {file = "pyDatalog-0.17.4-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:155359d13ea8503b3479e578aee871f0a93ffee806c3e34b73ce07649e7c96a1"},
+    {file = "pyDatalog-0.17.4-cp310-cp310-musllinux_1_1_i686.whl", hash = "sha256:91364894292c771ece2eae6d54af34264b81fe67c8f03d8f0974d416e7ee0f55"},
+    {file = "pyDatalog-0.17.4-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:be5e428d3ca3b3f8ea348906288d97327bda4f3bd6e65d145ba7d8371592ab50"},
+    {file = "pyDatalog-0.17.4-cp310-cp310-win32.whl", hash = "sha256:25bd15c812782055e971deebecc179e3cfddf0e84a6fe1014338c56a5a396a70"},
+    {file = "pyDatalog-0.17.4-cp310-cp310-win_amd64.whl", hash = "sha256:dd235a78fe05dcdf21e3323abf0370ef934cfb46e4f8bb459ff21d301c583c3b"},
+    {file = "pyDatalog-0.17.4-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:c1f12d12df08210473d3e467c9fbe9e540228525e28246ee20df41069873fa5b"},
+    {file = "pyDatalog-0.17.4-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2953713c8ba366cd5b6209bde1206b53d29e6aa9788462f5e0da33a2042b62d4"},
+    {file = "pyDatalog-0.17.4-cp36-cp36m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:2bd6b9acce7fc652c3a65f3ac9ae913579160a3250c4dc27c1fbefa1ae8ecef4"},
+    {file = "pyDatalog-0.17.4-cp36-cp36m-musllinux_1_1_i686.whl", hash = "sha256:dc04ad4c93bcc84198d7734e5dbe4b7450c26ebdc58fd20e5e5e4317d5e9f82d"},
+    {file = "pyDatalog-0.17.4-cp36-cp36m-musllinux_1_1_x86_64.whl", hash = "sha256:04ef682d597e74e1b47fa26b6a268d54dcf2c112c64a239451a38ea8d789ef4d"},
+    {file = "pyDatalog-0.17.4-cp36-cp36m-win32.whl", hash = "sha256:b9eeadba9cd75cbe09d274c498c0aebf5dab7f3a0ea528d1b9d323f01432a220"},
+    {file = "pyDatalog-0.17.4-cp36-cp36m-win_amd64.whl", hash = "sha256:a41d7d3ff6518999ea502ed3add113fbd6d986ad7008f5d23fefb8440511d389"},
+    {file = "pyDatalog-0.17.4-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:8cc1768e8b549dd4ae16e5c0f4aa88587e2e36eb68c57b2a2eadfb70f897f350"},
+    {file = "pyDatalog-0.17.4-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:a67753a869bcf427de6844c53f8db9074bc0f66f22bf56aaf591eef538fb809a"},
+    {file = "pyDatalog-0.17.4-cp37-cp37m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:ec1ff5f266f00cf341ea186d88d3b1c34430da69ab0ffee72bf3916b2111dd66"},
+    {file = "pyDatalog-0.17.4-cp37-cp37m-musllinux_1_1_i686.whl", hash = "sha256:b1d37ed25ff2ba92e30bc3ca41bf791763d8e07cf9fc0a2b7b2e8bc06490049f"},
+    {file = "pyDatalog-0.17.4-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:4baa87cc34d83364fd308e9779a5f94d65d127b6e5c120703dccc23a79b1fb92"},
+    {file = "pyDatalog-0.17.4-cp37-cp37m-win32.whl", hash = "sha256:b9ce5c835d406015fd38ee5b6ef50e8dec7a9e38b523439f13ca1576fb18cd7d"},
+    {file = "pyDatalog-0.17.4-cp37-cp37m-win_amd64.whl", hash = "sha256:0871586c8849660745be2c9f1bc5305d48801a550d9abc63b760d8e99f1a366a"},
+    {file = "pyDatalog-0.17.4-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:9091965e524742eed506c874e9ab092f877f4c34f2d2fe3c3d06a117cc329eb3"},
+    {file = "pyDatalog-0.17.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:271af2a7a1fd89309464173e480dde78ea040f9ac54b0e981e96c8383c9a64fc"},
+    {file = "pyDatalog-0.17.4-cp38-cp38-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:491010c04e720052678d2c03ad3ab93fbaf161f2ac4bed43b028d962db0b0f74"},
+    {file = "pyDatalog-0.17.4-cp38-cp38-musllinux_1_1_i686.whl", hash = "sha256:7d5f6a7dbd610f4b1d0d0d82f3ccfae0908d107b16373122a402273d5b0e3cb2"},
+    {file = "pyDatalog-0.17.4-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:e0238df06620636ea8e8adf17900363e1d3f6ab585aac1e1d0dbff7a7ca63c7a"},
+    {file = "pyDatalog-0.17.4-cp38-cp38-win32.whl", hash = "sha256:7028dadfc3f0dbfddddc83b46c159cab1c715677baf1a85f636cc4318535d567"},
+    {file = "pyDatalog-0.17.4-cp38-cp38-win_amd64.whl", hash = "sha256:7b96a713ed154d59baf267ad195a9189ed91665593b1047021309d5e56dbf0c9"},
+    {file = "pyDatalog-0.17.4-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:3fd9c9326c5eeadb3588f6f0f6401176207333996d79c0f199258003fd367f98"},
+    {file = "pyDatalog-0.17.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:714d42c2bbcbb39a6b86adf3f9e137f43451d0c714dcd1e0f9363c4ebd761da3"},
+    {file = "pyDatalog-0.17.4-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:750e1cf2f21d0c90207e6b6be865ee9d689e587bb55050f84cccb7d20be3ef5c"},
+    {file = "pyDatalog-0.17.4-cp39-cp39-musllinux_1_1_i686.whl", hash = "sha256:f9df08b5ba16b1c67206a6763f3dbae365f30a0b1d6a1033b9d41c584d48de84"},
+    {file = "pyDatalog-0.17.4-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:ed2754939402b78e70906d8659a4329f57548851822dfaa1929b280c7ec1df53"},
+    {file = "pyDatalog-0.17.4-cp39-cp39-win32.whl", hash = "sha256:87a61672e72ae22ba96643c142d702d8f7cc5f3ad75af6a8351cbb464d69e539"},
+    {file = "pyDatalog-0.17.4-cp39-cp39-win_amd64.whl", hash = "sha256:b1dc3fb25adc672c2cca9d3d35d52948ad5d54b1f789fa6a68caed8bcdbf4bc5"},
+    {file = "pyDatalog-0.17.4.tar.gz", hash = "sha256:1db6739b0a204c36d163c4ec37bb816e0ff2d276e12c9aff0b34ee9f102eac79"},
+]

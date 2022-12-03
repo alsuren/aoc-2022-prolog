@@ -10,33 +10,33 @@ pyDatalog.create_terms("X,Y,Z, Elf, Layer, package, running_total")
 def _():
 
     # pydatalog doesn't like having a layer numbered 0 for some reason
-    +package(elf1, 1, 0)
-    +package(elf1, 2, 1000)
-    +package(elf1, 3, 2000)
-    +package(elf1, 4, 3000)
+    +package(elf1, 1, 2, 0)
+    +package(elf1, 2, 3, 1000)
+    +package(elf1, 3, 4, 2000)
+    +package(elf1, 4, 5, 3000)
 
-    +package(elf2, 1, 0)
-    +package(elf2, 2, 4000)
+    +package(elf2, 1, 2, 0)
+    +package(elf2, 2, 3, 4000)
 
-    +package(elf3, 1, 0)
-    +package(elf3, 2, 5000)
-    +package(elf3, 3, 6000)
+    +package(elf3, 1, 2, 0)
+    +package(elf3, 2, 3, 5000)
+    +package(elf3, 3, 4, 6000)
 
-    +package(elf4, 1, 0)
-    +package(elf4, 2, 7000)
-    +package(elf4, 3, 8000)
-    +package(elf4, 4, 9000)
+    +package(elf4, 1, 2, 0)
+    +package(elf4, 2, 3, 7000)
+    +package(elf4, 3, 4, 8000)
+    +package(elf4, 4, 5, 9000)
 
-    +package(elf5, 1, 0)
-    +package(elf5, 2, 10000)
+    +package(elf5, 1, 2, 0)
+    +package(elf5, 2, 3, 10000)
     # if there is a package for level 1 then there is an empty package at level 0
     # package(Elf, 0, 0) <= package(Elf, 1, _)
-    print(package(Elf, Layer, Total))
+    # print(package(Elf, LayerBelow, Layer, Total))
 
     # FIXME: why can't I make this recursive?
-    running_total(Elf, Layer, Total) <= package(Elf, Layer, Cost1) & (
-        LayerBelow == Layer - 1
-    ) & package(Elf, LayerBelow, Cost2) & (Total == Cost1 + Cost2)
+    running_total(Elf, Layer, Total) <= package(
+        Elf, LayerBelow, Layer, Cost1
+    ) & running_total(Elf, LayerBelow, Cost2) & (Total == (Cost1 + Cost2))
     # running_total[Elf, Y] <= (package(Elf, Y, C) + running_total[Elf, Y - 1])
     print(running_total(Elf, Layer, Total))
     # running_total(Elf, 0, 0)

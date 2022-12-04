@@ -1,20 +1,27 @@
 :- use_module(library(error)).
 
-% package(empty, empty, 0).
+% This is the structure of the example. I decided on this structure
+% when I was still trying to do it in Datalog.
+
 % package(empty, elf_1_1, 1000).
 % package(elf_1_1, elf_1_2, 2000).
 % package(elf_1_2, elf_1_3, 3000).
+% package(elf_1_3, full, 0).
 
 % package(empty, elf_2_1, 4000).
+% package(elf_2_1, full, 0).
 
 % package(empty, elf_3_1, 5000).
 % package(elf_3_1, elf_3_2, 6000).
+% package(elf_3_2, full, 0).
 
 % package(empty, elf_4_1, 7000).
 % package(elf_4_1, elf_4_2, 8000).
 % package(elf_4_2, elf_4_3, 9000).
+% package(elf_4_3, full, 0).
 
 % package(empty, elf_5_1, 10000).
+% package(elf_5_1, full, 0).
 
 total(empty, 0).
 total(Position, Weight) :- 
@@ -22,7 +29,11 @@ total(Position, Weight) :-
     total(NextPosition, W2),
     plus(W1, W2, Weight).
 
-solution(Max) :- findall(W, total(_, W), Result), max_list(Result, Max).
+solution(TopThree) :- 
+    findall(W, total(full, W), Result),
+    sort(0, @>=, Result, Sorted),
+    [One, Two, Three | _] = Sorted,
+    TopThree is One + Two + Three.
 
 
 load_arcs(File) :-
@@ -46,7 +57,9 @@ assert_fact(I, "", Line) :-
     number_string(Number, Line),
     write_ln((empty, I, Number)),
     assert(package(empty, I, Number)).
-assert_fact(I, _Prev, "") :- !.
+assert_fact(I, _Prev, "") :- !,
+    I1 is I-1,
+    assert(package(I1, full, 0)).
 assert_fact(I, _Prev, Line) :-
     I1 is I-1, % FIXME: I1 is I+1 above. Think of better names?
     number_string(Number, Line),

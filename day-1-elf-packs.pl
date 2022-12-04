@@ -40,13 +40,16 @@ elf([Item|Items], A, Rest) :-
 % which expands to:
 elves([], A, Rest) :-
     eos(A, Rest).
-elves([ElfLoad|ElfLoads], A, Rest) :-
+elves(MoreElfLoads, A, Rest) :-
+    % I made this destructuring explicit manually so that I could speak about it with more clarity.
+    MoreElfLoads = [ElfLoad|ElfLoads],
     elf(Items, A, B),
     % The bit inside the {} doesn't get messed around with.
     % `ElfLoad` ends up as the sum of `Items`.
     sumlist(Items, ElfLoad),
     elves(ElfLoads, B, Rest).
-% In this case, the difference between A and B is an `elf`. Its Items are summed and added to ElfLoads.
+% In this case, the difference between A and B is an `elf`.
+% Its Items are summed and added to MoreElfLoads.
 
 % eos is "end of stream", which expands to this simple fact:
 % dcg_basics:eos([], []).
